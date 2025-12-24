@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Data Pipeline OAuth Connector</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #e3f2fd 0, #f5f5f5 50%, #f5f5f5 100%);
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .card {
+      background: #ffffff;
+      padding: 24px 28px 22px;
+      border-radius: 20px;
+      box-shadow: 0 18px 45px rgba(0,0,0,0.08);
+      max-width: 420px;
+      width: 100%;
+      text-align: center;
+    }
+    h1 {
+      font-size: 1.4rem;
+      margin-bottom: 0.2rem;
+    }
+    p {
+      color: #555;
+      font-size: 0.95rem;
+      margin-top: 0.2rem;
+      margin-bottom: 1.4rem;
+    }
+    .btn-row {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    button {
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: transform 0.1s ease, box-shadow 0.1s ease, opacity 0.15s;
+    }
+    button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.14);
+    }
+    .sage { background: #00a160; color: white; }
+    .ebay { background: #0064d2; color: white; }
+    .amazon { background: #ff9900; color: #232f3e; }
+    .hint {
+      font-size: 0.8rem;
+      color: #777;
+      margin-top: 1.1rem;
+      line-height: 1.4;
+    }
+    code {
+      background: #f0f0f0;
+      padding: 2px 4px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Connect your platforms</h1>
+    <p>
+      Authorize <strong>Sage</strong>, <strong>eBay</strong>, and <strong>Amazon</strong> once.
+      Tokens will be stored in BigQuery and used automatically by your Python pipelines.
+    </p>
+    <div class="btn-row">
+      <button class="sage" onclick="window.location.href='/auth/sage'">
+        Connect Sage
+      </button>
+      <button class="ebay" onclick="window.location.href='/auth/ebay'">
+        Connect eBay
+      </button>
+      <button class="amazon" onclick="window.location.href='/auth/amazon'">
+        Connect Amazon
+      </button>
+    </div>
+    <div class="hint">
+      Use these as redirect URLs in provider portals (replace <code>https://your-domain.com</code> with your app's URL):<br />
+      <code>https://your-domain.com/oauth/callback/sage</code>,
+      <code>https://your-domain.com/oauth/callback/ebay</code>,
+      <code>https://your-domain.com/oauth/callback/amazon</code>
+    </div>
+  </div>
+</body>
+</html>

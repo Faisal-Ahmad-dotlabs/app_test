@@ -1,0 +1,16 @@
+{
+  "name": "oauth-pipeline",
+  "version": "1.0.0",
+  "description": "OAuth redirect + token capture for Sage, eBay, Amazon with BigQuery storage",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@google-cloud/bigquery": "^7.0.0",
+    "axios": "^1.7.0",
+    "dotenv": "^16.4.0",
+    "express": "^4.19.0"
+  }
+}
